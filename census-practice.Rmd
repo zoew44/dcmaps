@@ -1,0 +1,136 @@
+---
+title: "Census Practice"
+output: html_document
+date: "2024-08-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+v17 <- load_variables(2022, "acs5", cache = TRUE)
+View(v17)
+
+
+
+ 
+  
+  ##start
+  
+dc <- get_acs(geography = "tract", 
+              variables = "B07011_005", 
+              state = "DC", 
+              year = 2022, 
+              geometry = TRUE)
+
+ggplot(dc, aes(fill = estimate)) + 
+  geom_sf() + 
+  theme_void() + 
+  scale_fill_viridis_c(labels = scales::dollar)   
+  
+
+  
+  dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25034_002",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma") 
+
+
+dc <- get_acs(geography = "tract", 
+              variables = "B25026_004", 
+              state = "DC", 
+              year = 2022, 
+              geometry = TRUE)
+
+ggplot(dc, aes(fill = estimate)) + 
+  geom_sf() + 
+  theme_void() + 
+  scale_fill_viridis_c(labels = scales::number)
+
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25003_001",
+  geometry = TRUE,
+  year = 2022
+)
+
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma") 
+
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25003_002",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma") 
+
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25003_003",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma") 
+  
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B01002A_001",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma") 
+
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25063_001",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma")
+
+dc.tracts <- get_acs(
+  state = "DC",
+  geography = "tract",
+  variables = "B25071_001",
+  geometry = TRUE,
+  year = 2022
+)
+
+dc.tracts %>%
+  ggplot(aes(fill = estimate)) + 
+  geom_sf(color = NA) + 
+  scale_fill_viridis_c(option = "magma")
